@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Novus Studio — Estudio Creativo Digital</title>
+<meta name="description" content="Marketing digital, branding y desarrollo web para marcas que quieren verse y crecer como líderes.">
+<meta property="og:title" content="Novus Studio — Estudio Creativo Digital">
+<meta property="og:description" content="Marketing digital, branding y desarrollo web.">
+<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_PE">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "JL Novus Studio",
+  "alternateName": "Novus Studio",
+  "description": "Estudio creativo digital: marketing digital, branding y desarrollo web.",
+  "image": "assets/og-image.jpg",
+  "telephone": "+51 938 437 193",
+  "email": "7.jhuliniolopez@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Cajamarca", "addressCountry": "PE" },
+  "areaServed": "PE",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "09:00", "closes": "19:00"
+  }],
+  "sameAs": ["https://www.instagram.com/jlnovusstudio"]
+}
+</script>
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F4F6; --bg2:#FFFFFF; --card:#FFFFFF; --ink:#0B0B0C; --ink2:#3A3A3F; --muted:#6B6B72; --line:rgba(11,11,12,.10);
+  --pill:rgba(255,255,255,.75); --pill-b:rgba(11,11,12,.08); --btn:#0B0B0C; --btn-ink:#FFFFFF;
+  --accent:linear-gradient(90deg,#0B0B0C,#5A5A62); --floor:rgba(11,11,12,.22); --glass:rgba(255,255,255,.55);
+  --glass-edge:rgba(120,125,140,.35); --wave:rgba(11,11,12,.07); --shadow:0 30px 60px -40px rgba(11,11,12,.35);
+  --nav:rgba(243,244,246,.78);
+}
+[data-theme="dark"],.dz{
+  --bg:#0B0B0C; --bg2:#141416; --card:#121214; --ink:#F5F5F2; --ink2:#D2D2D6; --muted:#9A9AA0; --line:rgba(255,255,255,.10);
+  --pill:rgba(255,255,255,.04); --pill-b:rgba(255,255,255,.12); --btn:transparent; --btn-ink:#F5F5F2;
+  --accent:linear-gradient(90deg,#F5F5F2,#8E8E93); --floor:rgba(0,0,0,.7); --glass:rgba(255,255,255,.03);
+  --glass-edge:rgba(255,255,255,.18); --wave:rgba(255,255,255,.06); --shadow:0 30px 60px -40px rgba(0,0,0,.9);
+  --nav:rgba(11,11,12,.72);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{background:var(--bg)}
+body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .3s,color .3s}
+a{color:inherit}
+.wrap{position:relative;max-width:1280px;margin:0 auto;padding:0 40px}
+
+/* NAV (sticky) */
+header{position:sticky;top:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.scrolled{background:var(--nav);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;transition:padding .3s}
+header.scrolled nav{padding:12px 0}
+.brand img{height:48px;display:block}
+.brand .dark,[data-theme="dark"] .brand .light{display:none}
+[data-theme="dark"] .brand .dark{display:block}
+.dz{color:var(--ink)}
+.dz .brand .light{display:none}
+.dz .brand .dark{display:block}
+.menu{display:flex;gap:6px;padding:6px;border-radius:999px;background:var(--pill);border:1px solid var(--pill-b);backdrop-filter:blur(12px)}
+.menu a{font-size:14px;font-weight:500;color:var(--ink2);text-decoration:none;padding:10px 20px;border-radius:999px;transition:.2s;border:1px solid transparent}
+.menu a.on{background:var(--ink);color:var(--bg)}
+[data-theme="dark"] .menu a.on,.dz .menu a.on{background:transparent;border-color:var(--line);color:var(--ink)}
+.menu a:hover{color:var(--ink)}
+.right{display:flex;align-items:center;gap:12px}
+.cta{font-size:14px;font-weight:600;text-decoration:none;color:var(--btn-ink);background:var(--btn);border:1px solid var(--ink);padding:12px 22px;border-radius:999px;display:inline-flex;gap:8px;align-items:center;transition:transform .2s}
+.cta:hover,.btn:hover{transform:translateY(-2px)}
+.toggle{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--pill);color:var(--ink);cursor:pointer;display:grid;place-items:center}
+.toggle svg{width:18px;height:18px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;margin-top:-93px;padding-top:93px;background:#050506;min-height:min(100vh,980px);display:flex;align-items:center}
+.hero>.wrap{width:100%}
+.hero .grid{grid-template-columns:minmax(0,620px);min-height:calc(min(100vh,980px) - 93px)}
+.hero-video{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-video video{position:absolute;top:52%;right:-4%;width:68%;height:auto;aspect-ratio:16/9;transform:translateY(-50%);object-fit:cover;
+  -webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 62%,transparent 100%)}
+.hero-video:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,#050506 30%,rgba(5,5,6,.6) 44%,rgba(5,5,6,0) 58%),
+             linear-gradient(0deg,#050506 0,rgba(5,5,6,0) 18%)}
+.waves{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.waves path{fill:none;stroke:var(--wave);stroke-width:1}
+.grid{display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:20px;padding:40px 0 90px}
+.grid>*{min-width:0}
+.eyebrow{display:flex;align-items:center;gap:14px;font-size:12px;font-weight:600;letter-spacing:.28em;color:var(--ink2);text-transform:uppercase}
+.eyebrow:before{content:"";width:34px;height:1.5px;background:var(--ink)}
+h1{font-size:clamp(38px,4.6vw,64px);line-height:1.04;font-weight:800;letter-spacing:-.025em;margin:22px 0}
+.grad{background:var(--accent);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;line-height:1.6;color:var(--muted);max-width:520px}
+.actions{display:flex;gap:26px;align-items:center;margin:36px 0 56px;flex-wrap:wrap}
+.btn{font-size:15px;font-weight:600;text-decoration:none;padding:16px 28px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;
+  color:var(--btn-ink);background:var(--btn);border:1px solid var(--ink);cursor:pointer;font-family:inherit;transition:transform .2s}
+.play{display:inline-flex;align-items:center;gap:12px;font-size:15px;font-weight:600;color:var(--ink);text-decoration:none}
+.play i{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center}
+.play i:after{content:"";border-left:11px solid var(--ink);border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+.stats{display:flex;align-items:center}
+.stat{padding:0 34px;border-left:1px solid var(--line)}
+.stat:first-child{padding-left:0;border-left:0}
+.stat b{display:block;font-size:28px;font-weight:700;letter-spacing:-.02em}
+.stat small{font-size:13px;color:var(--muted);white-space:nowrap}
+.mini{display:flex;align-items:center;gap:16px;padding-left:34px;border-left:1px solid var(--line)}
+.mini svg{width:34px;height:34px;stroke:var(--ink);fill:none;stroke-width:1.4;flex:none}
+.mini p{font-size:13px;line-height:1.45;color:var(--ink2);max-width:170px}
+
+/* DEVICES */
+.stage{position:relative;height:560px;perspective:1800px}
+.arc{position:absolute;width:520px;height:520px;left:-10px;top:40px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,var(--glass),transparent 60%);
+  border:1px solid var(--glass-edge);box-shadow:inset 0 0 60px var(--glass-edge);
+  -webkit-mask:linear-gradient(180deg,#000 52%,transparent 52%);mask:linear-gradient(180deg,#000 52%,transparent 52%);transform:rotate(-14deg)}
+.arc:after{content:"";position:absolute;inset:26px;border-radius:50%;border:1px solid var(--glass-edge);opacity:.6}
+.floor{position:absolute;left:12%;right:2%;bottom:60px;height:60px;border-radius:50%;background:var(--floor);filter:blur(28px)}
+.laptop{position:absolute;left:4%;top:70px;width:520px;transform:rotateY(-24deg) rotateX(6deg)}
+.lid{position:relative;width:100%;aspect-ratio:16/10.4;border-radius:22px 22px 8px 8px;padding:14px 14px 22px;
+  background:linear-gradient(145deg,#2b2c30,#0c0c0d 60%);box-shadow:0 0 0 2px #9a9ca3,0 0 0 3px #d8dadf,0 40px 80px -30px rgba(0,0,0,.6)}
+.lid:before{content:"";position:absolute;top:6px;left:50%;width:7px;height:7px;margin-left:-3px;border-radius:50%;background:#1e1f22}
+.screen{position:relative;height:100%;border-radius:8px;overflow:hidden;background:radial-gradient(120% 90% at 50% 20%,#1a1b1f,#060607 70%);display:grid;place-items:center}
+.screen svg{position:absolute;inset:0;width:100%;height:100%}
+.screen svg path{fill:none;stroke:rgba(255,255,255,.12);stroke-width:1}
+.screen img{position:relative;width:46%}
+.glare{position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.10),transparent 38%);pointer-events:none}
+.base{position:relative;margin:-2px auto 0;width:112%;left:-6%;height:20px;border-radius:2px 2px 14px 14px;
+  background:linear-gradient(180deg,#e9eaee,#a9abb2 55%,#7c7e85);box-shadow:0 14px 26px -10px rgba(0,0,0,.45)}
+.base:before{content:"";position:absolute;left:50%;top:0;width:110px;height:7px;margin-left:-55px;border-radius:0 0 8px 8px;background:linear-gradient(180deg,#a6a8ae,#c9cbd0)}
+.phone{position:absolute;right:-2%;top:215px;width:136px;aspect-ratio:9/19.3;border-radius:30px;padding:7px;
+  background:#0d0d0e;box-shadow:0 0 0 2px #8f9198,0 0 0 3px #d5d7dc,0 40px 60px -24px rgba(0,0,0,.6);transform:rotateY(-18deg) rotateX(4deg)}
+.phone .scr{height:100%;border-radius:24px;background:radial-gradient(100% 70% at 50% 30%,#1b1c20,#050506 70%);display:grid;place-items:center;position:relative;overflow:hidden}
+.phone .scr:before{content:"";position:absolute;top:9px;left:50%;width:46px;height:14px;margin-left:-23px;border-radius:10px;background:#000}
+.phone img{width:52%}
+.stand{position:absolute;right:calc(-2% + 20px);top:478px;width:96px;height:56px;border-radius:4px;
+  background:linear-gradient(180deg,rgba(200,205,215,.35),rgba(200,205,215,.08));border:1px solid var(--glass-edge);transform:skewX(-8deg)}
+
+/* STRIP */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:22px 0}
+.strip .track{display:inline-flex;gap:48px;animation:slide 40s linear infinite;font-size:14px;font-weight:600;letter-spacing:.22em;color:var(--muted);text-transform:uppercase}
+.strip .track span:nth-child(even){color:var(--line);font-weight:400;letter-spacing:0}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section.block{padding:130px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:64px}
+h2{font-size:clamp(32px,3.6vw,50px);line-height:1.08;font-weight:800;letter-spacing:-.02em;margin-top:20px;max-width:640px}
+.head p{color:var(--muted);font-size:17px;line-height:1.6;max-width:420px}
+
+/* services */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:40px 36px;box-shadow:var(--shadow);transition:transform .3s,border-color .3s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);border-color:var(--glass-edge)}
+.card .ic{width:58px;height:58px;border-radius:16px;border:1px solid var(--line);display:grid;place-items:center;margin-bottom:34px}
+.card .ic svg{width:28px;height:28px;stroke:var(--ink);fill:none;stroke-width:1.4}
+.card h3{font-size:22px;font-weight:700;letter-spacing:-.01em;margin-bottom:14px}
+.card p{color:var(--muted);line-height:1.65;font-size:15px;margin-bottom:26px}
+.card ul{list-style:none;border-top:1px solid var(--line);padding-top:22px;margin-top:auto}
+.card li{font-size:14px;color:var(--ink2);padding:7px 0;display:flex;gap:12px;align-items:center}
+.card li:before{content:"";width:14px;height:1px;background:var(--ink)}
+
+/* process */
+.process{background:var(--bg2)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.step{padding:40px 30px 10px 0;border-right:1px solid var(--line);margin-right:30px}
+.step:last-child{border-right:0;margin-right:0}
+.step .n{font-size:13px;font-weight:600;letter-spacing:.2em;color:var(--muted)}
+.step h3{font-size:20px;font-weight:700;margin:18px 0 12px}
+.step p{font-size:15px;line-height:1.65;color:var(--muted)}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.proj{border-radius:24px;overflow:hidden;border:1px solid var(--line);background:var(--card);box-shadow:var(--shadow);text-decoration:none;transition:transform .3s}
+.proj:hover{transform:translateY(-6px)}
+.cover{aspect-ratio:16/10;position:relative;overflow:hidden;background:radial-gradient(120% 100% at 30% 20%,#232327,#09090a 70%);display:grid;place-items:center}
+.cover svg.lines{position:absolute;inset:0;width:100%;height:100%}
+.cover svg.lines path{fill:none;stroke:rgba(255,255,255,.08)}
+.meta{display:flex;justify-content:space-between;align-items:center;padding:26px 30px}
+.meta h3{font-size:19px;font-weight:700}
+.meta span{font-size:12px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+.meta i{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-style:normal;flex:none}
+/* cover mini-mockups */
+.cv-brand{display:flex;gap:18px;align-items:center}
+.cv-brand .tile{width:120px;height:150px;border-radius:12px;background:#f5f5f2;display:grid;place-items:center;box-shadow:0 30px 50px -20px #000}
+.cv-brand .tile.d{background:#0b0b0c;border:1px solid rgba(255,255,255,.15)}
+.cv-brand img{width:62%}
+.cv-browser{width:72%;border-radius:12px;overflow:hidden;background:#0b0b0c;border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 60px -25px #000}
+.cv-browser .bar{height:26px;background:#18181b;display:flex;gap:6px;align-items:center;padding:0 12px}
+.cv-browser .bar b{width:8px;height:8px;border-radius:50%;background:#3a3a3f}
+.cv-browser .bd{padding:26px 28px}
+.sk{height:10px;border-radius:6px;background:rgba(255,255,255,.14);margin-bottom:10px}
+.sk.t{height:18px;width:70%;background:rgba(255,255,255,.85)}
+.sk.w60{width:60%}.sk.w40{width:40%}
+.sk.btn{width:90px;height:22px;border-radius:12px;background:#f5f5f2;margin-top:18px}
+.cv-feed{display:grid;grid-template-columns:repeat(3,70px);gap:8px;padding:16px;border-radius:26px;background:#0b0b0c;border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 60px -25px #000}
+.cv-feed div{width:70px;height:70px;border-radius:6px;background:linear-gradient(135deg,#2a2a2f,#121214);display:grid;place-items:center}
+.cv-feed div:nth-child(3n+2){background:#f5f5f2}
+.cv-feed img{width:50%}
+.cv-shop{display:flex;gap:16px}
+.cv-shop .p{width:110px;border-radius:12px;background:#0b0b0c;border:1px solid rgba(255,255,255,.14);padding:10px;box-shadow:0 30px 50px -22px #000}
+.cv-shop .p .im{height:90px;border-radius:8px;background:linear-gradient(160deg,#2c2c31,#111113);margin-bottom:10px}
+.note{font-size:13px;color:var(--muted);margin-top:26px}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about .visual{aspect-ratio:1/1;border-radius:28px;border:1px solid var(--line);background:radial-gradient(80% 80% at 50% 40%,var(--bg2),var(--bg));display:grid;place-items:center;position:relative;overflow:hidden}
+.about .visual img{width:40%}
+.about .visual .dark,[data-theme="dark"] .about .visual .light{display:none}
+[data-theme="dark"] .about .visual .dark{display:block}
+.about p.txt{font-size:17px;line-height:1.75;color:var(--muted);margin:26px 0 36px}
+.values{display:grid;gap:0;border-top:1px solid var(--line)}
+.values>div{display:flex;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.values b{font-size:13px;color:var(--muted);letter-spacing:.15em;width:34px;flex:none;padding-top:3px}
+.values h4{font-size:17px;font-weight:700;margin-bottom:6px}
+.values span{font-size:15px;color:var(--muted);line-height:1.55}
+
+/* CTA band */
+.band{border-radius:32px;padding:90px 60px;text-align:center;position:relative;overflow:hidden;
+  background:#0B0B0C;color:#F5F5F2;border:1px solid var(--line)}
+.band svg{position:absolute;inset:0;width:100%;height:100%}
+.band svg path{fill:none;stroke:rgba(255,255,255,.06)}
+.band h2{margin:20px auto 18px;max-width:760px;color:#F5F5F2}
+.band p{color:#9A9AA0;font-size:17px;margin-bottom:38px}
+.band .eyebrow{justify-content:center;color:#D2D2D6}
+.band .eyebrow:before{background:#F5F5F2}
+.band .btn{background:#F5F5F2;color:#0B0B0C;border-color:#F5F5F2;position:relative}
+
+/* contact */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
+.info{display:grid;gap:0;margin-top:40px;border-top:1px solid var(--line)}
+.info a,.info div{display:flex;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:16px}
+.info small{color:var(--muted);font-size:13px;letter-spacing:.15em;text-transform:uppercase}
+form{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:44px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;gap:20px}
+form .full{grid-column:1/-1}
+label{display:block;font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ink2);margin-bottom:10px}
+input,select,textarea{width:100%;font:inherit;font-size:15px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:12px 0;outline:none;border-radius:0}
+select{appearance:none;cursor:pointer}
+select option{color:#0B0B0C}
+textarea{resize:vertical;min-height:110px}
+input:focus,select:focus,textarea:focus{border-color:var(--ink)}
+form{align-self:start;align-content:start}
+form .btn{justify-self:start;margin-top:10px}
+.ok{display:none;font-size:14px;color:var(--ink2)}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:70px 0 40px;margin-top:130px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.fgrid p{color:var(--muted);font-size:14px;line-height:1.7;margin-top:22px;max-width:320px}
+.fgrid h5{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:20px}
+.fgrid a{display:block;text-decoration:none;font-size:14px;color:var(--ink2);padding:6px 0}
+.fgrid a:hover{color:var(--ink)}
+.fnote{display:block;font-size:13px;line-height:1.7;color:var(--muted);margin-top:12px}
+.info a span,.info div span{text-align:right}
+.social{display:flex;gap:10px;margin-top:24px}
+.social a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;padding:0}
+.social svg{width:17px;height:17px;fill:none;stroke:var(--ink);stroke-width:1.5}
+.legal{display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:56px;padding-top:28px;font-size:13px;color:var(--muted)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.strip .track{animation:none}html{scroll-behavior:auto}}
+@media (max-width:1080px){
+  .hero-video video{width:160%;right:-30%;top:40%;opacity:.5}
+  .hero-video:after{background:linear-gradient(180deg,rgba(5,5,6,.55) 0,rgba(5,5,6,.3) 40%,#050506 100%)}
+}
+
+@media (max-width:1080px){
+  .menu{display:none}
+  .grid,.about,.contact{grid-template-columns:1fr}
+  .stage{height:440px;transform:scale(.8);transform-origin:top center;margin-bottom:-80px}
+  .mini{display:none}
+  .cards{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .step{border-right:0;margin-right:0;border-bottom:1px solid var(--line);padding-bottom:30px}
+  .head{flex-direction:column;align-items:start}
+  .about{gap:50px}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .wrap{padding:0 18px}
+  .cta{display:none}
+  h1{font-size:40px}
+  .lead{font-size:16px}
+  .actions{gap:18px;margin:28px 0 40px}
+  .btn{padding:14px 22px}
+  .stage{transform:none;height:300px;margin:10px 0 0;overflow:hidden}
+  .arc{width:280px;height:280px;left:-20px;top:10px}
+  .laptop{left:0;top:40px;width:270px}
+  .lid{padding:8px 8px 12px;border-radius:14px 14px 6px 6px}
+  .phone{right:4px;top:110px;width:80px;border-radius:18px;padding:4px}
+  .phone .scr{border-radius:14px}
+  .phone .scr:before{width:26px;height:8px;margin-left:-13px;top:6px}
+  .stand{display:none}
+  .floor{bottom:30px}
+  .stats{flex-wrap:wrap;gap:16px}
+  .stat{padding:0 18px}
+  section.block{padding:90px 0}
+  .head{margin-bottom:40px}
+  .steps,.projects{grid-template-columns:1fr}
+  .card{padding:32px 26px}
+  .cv-brand .tile{width:84px;height:106px}
+  .cv-feed{grid-template-columns:repeat(3,50px)}.cv-feed div{width:50px;height:50px}
+  .cv-shop .p{width:80px}.cv-shop .p .im{height:64px}
+  .band{padding:64px 24px;border-radius:24px}
+  form{grid-template-columns:1fr;padding:30px 22px}
+  .fgrid{grid-template-columns:1fr}
+  .legal{flex-direction:column;gap:10px}
+  footer{margin-top:90px}
+}
+</style>
+</head>
+<body>
+<header id="top" class="dz">
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#inicio"><img class="light" src="assets/logo-negro.png" alt="Novus Studio"><img class="dark" src="assets/logo-blanco.png" alt="Novus Studio"></a>
+      <div class="menu">
+        <a class="on" href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a>
+      </div>
+      <div class="right">
+        <button class="toggle" id="toggle" aria-label="Cambiar modo claro u oscuro">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <a class="cta" href="https://wa.me/51938437193" target="_blank" rel="noopener">Cotiza tu proyecto <span>↗</span></a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero dz" id="inicio">
+  <div class="hero-video" aria-hidden="true">
+    <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/novus-hero-poster.jpg">
+      <source src="novus-hero-web.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="eyebrow">Estudio creativo digital</div>
+        <h1>Diseñamos marcas que <span class="grad">venden</span> como líderes</h1>
+        <p class="lead">Marketing digital, branding y desarrollo web para negocios que quieren proyectar una imagen premium y crecer con estrategia.</p>
+        <div class="actions">
+          <a class="btn" href="#servicios">Nuestros servicios <span>→</span></a>
+          <a class="play" href="#proyectos"><i></i>Ver portafolio</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>360°</b><small>Marketing integral</small></div>
+          <div class="stat"><b>100%</b><small>Diseño a medida</small></div>
+          <div class="mini">
+            <svg viewBox="0 0 32 32"><path d="M16 4 29 10 16 16 3 10z"/><path d="M3 16l13 6 13-6"/><path d="M3 22l13 6 13-6"/></svg>
+            <p>Branding, web y marketing en un solo estudio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<!-- SERVICIOS -->
+<section class="block" id="servicios">
+  <div class="wrap">
+    <div class="head rv">
+      <div><div class="eyebrow">Servicios</div><h2>Todo lo que tu marca necesita para crecer</h2></div>
+      <p>Unimos estrategia, diseño y tecnología para que tu negocio se vea profesional y atraiga a los clientes correctos.</p>
+    </div>
+    <div class="cards">
+      <article class="card rv">
+        <div class="ic"><svg viewBox="0 0 32 32"><rect x="4" y="6" width="24" height="16" rx="2"/><path d="M16 22v4M11 26h10"/></svg></div>
+        <h3>Marketing Digital</h3>
+        <p>Estrategias y campañas que convierten seguidores en clientes, con contenido que refleja la calidad de tu marca.</p>
+        <ul><li>Gestión de redes sociales</li><li>Publicidad en Meta y Google</li><li>Contenido y fotografía</li><li>Reportes de resultados</li></ul>
+      </article>
+      <article class="card rv">
+        <div class="ic"><svg viewBox="0 0 32 32"><path d="M16 4 29 10 16 16 3 10z"/><path d="M3 16l13 6 13-6"/><path d="M3 22l13 6 13-6"/></svg></div>
+        <h3>Branding</h3>
+        <p>Identidades visuales sólidas y memorables que transmiten confianza desde el primer vistazo.</p>
+        <ul><li>Logotipo e identidad visual</li><li>Manual de marca</li><li>Papelería y aplicaciones</li><li>Kit para redes sociales</li></ul>
+      </article>
+      <article class="card rv">
+        <div class="ic"><svg viewBox="0 0 32 32"><path d="M11 9 4 16l7 7M21 9l7 7-7 7M18 6l-4 20"/></svg></div>
+        <h3>Desarrollo Web</h3>
+        <p>Sitios rápidos, elegantes y optimizados para celular, pensados para vender y posicionarse en Google.</p>
+        <ul><li>Páginas web corporativas</li><li>Landing pages</li><li>Tiendas online</li><li>SEO y mantenimiento</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="block process" id="proceso">
+  <div class="wrap">
+    <div class="head rv">
+      <div><div class="eyebrow">Proceso</div><h2>Un método claro, de la idea al resultado</h2></div>
+      <p>Trabajamos por etapas para que siempre sepas en qué punto está tu proyecto.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="n">01</div><h3>Descubrimiento</h3><p>Conocemos tu negocio, tu público y tus objetivos.</p></div>
+      <div class="step rv"><div class="n">02</div><h3>Estrategia</h3><p>Definimos el camino: mensaje, estilo y canales.</p></div>
+      <div class="step rv"><div class="n">03</div><h3>Diseño y desarrollo</h3><p>Creamos tu marca, tu web o tus campañas con atención al detalle.</p></div>
+      <div class="step rv"><div class="n">04</div><h3>Lanzamiento</h3><p>Publicamos, medimos y optimizamos para que sigas creciendo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section class="block" id="proyectos">
+  <div class="wrap">
+    <div class="head rv">
+      <div><div class="eyebrow">Proyectos</div><h2>Trabajo con detalle en cada pieza</h2></div>
+      <p>Una muestra de lo que creamos para nuestros clientes.</p>
+    </div>
+    <div class="projects">
+      <a class="proj rv" href="#contacto">
+        <div class="cover"><svg class="lines" viewBox="0 0 400 250" preserveAspectRatio="none"></svg>
+          <div class="cv-brand"><div class="tile"><img src="assets/icono-negro.png" alt=""></div><div class="tile d"><img src="assets/icono-blanco.png" alt=""></div></div></div>
+        <div class="meta"><div><span>Branding</span><h3>Identidad de marca</h3></div><i>↗</i></div>
+      </a>
+      <a class="proj rv" href="#contacto">
+        <div class="cover"><svg class="lines" viewBox="0 0 400 250" preserveAspectRatio="none"></svg>
+          <div class="cv-browser"><div class="bar"><b></b><b></b><b></b></div><div class="bd"><div class="sk t"></div><div class="sk w60"></div><div class="sk w40"></div><div class="sk btn"></div></div></div></div>
+        <div class="meta"><div><span>Desarrollo web</span><h3>Sitio web corporativo</h3></div><i>↗</i></div>
+      </a>
+      <a class="proj rv" href="#contacto">
+        <div class="cover"><svg class="lines" viewBox="0 0 400 250" preserveAspectRatio="none"></svg>
+          <div class="cv-feed"><div></div><div><img src="assets/icono-negro.png" alt=""></div><div></div><div><img src="assets/icono-blanco.png" alt=""></div><div></div><div></div></div></div>
+        <div class="meta"><div><span>Marketing digital</span><h3>Campaña en redes</h3></div><i>↗</i></div>
+      </a>
+      <a class="proj rv" href="#contacto">
+        <div class="cover"><svg class="lines" viewBox="0 0 400 250" preserveAspectRatio="none"></svg>
+          <div class="cv-shop"><div class="p"><div class="im"></div><div class="sk w60"></div><div class="sk w40"></div></div><div class="p"><div class="im"></div><div class="sk w60"></div><div class="sk w40"></div></div><div class="p"><div class="im"></div><div class="sk w60"></div><div class="sk w40"></div></div></div></div>
+        <div class="meta"><div><span>E-commerce</span><h3>Tienda online</h3></div><i>↗</i></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section class="block process" id="nosotros">
+  <div class="wrap about">
+    <div class="visual rv"><img class="light" src="assets/icono-negro.png" alt="Novus Studio"><img class="dark" src="assets/icono-blanco.png" alt="Novus Studio"></div>
+    <div class="rv">
+      <div class="eyebrow">Nosotros</div>
+      <h2>Un estudio pequeño, con estándares de marca grande</h2>
+      <p class="txt">En Novus Studio creemos que una marca bien construida abre puertas. Por eso cuidamos cada detalle: desde la estrategia hasta el último píxel, para que tu negocio se vea y se sienta premium.</p>
+      <div class="values">
+        <div><b>01</b><div><h4>Estrategia primero</h4><span>Cada decisión de diseño responde a un objetivo de negocio.</span></div></div>
+        <div><b>02</b><div><h4>Diseño con intención</h4><span>Limpio, elegante y coherente en todos tus canales.</span></div></div>
+        <div><b>03</b><div><h4>Trato cercano</h4><span>Comunicación directa y acompañamiento en todo el proceso.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="block" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="band rv">
+      <svg viewBox="0 0 1200 420" preserveAspectRatio="none" id="bandwaves" aria-hidden="true"></svg>
+      <div class="eyebrow">Hablemos</div>
+      <h2>¿Listo para que tu marca se vea premium?</h2>
+      <p>Cuéntanos tu idea y te enviamos una propuesta a medida.</p>
+      <a class="btn" href="https://wa.me/51938437193" target="_blank" rel="noopener">Cotiza tu proyecto <span>↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="block" id="contacto">
+  <div class="wrap contact">
+    <div class="rv">
+      <div class="eyebrow">Contacto</div>
+      <h2>Empecemos tu proyecto</h2>
+      <p class="lead" style="margin-top:20px">Completa el formulario y te respondemos lo antes posible.</p>
+      <div class="info">
+        <a href="https://wa.me/51938437193" target="_blank" rel="noopener" id="waLink"><small>WhatsApp</small><span id="waText">+51 938 437 193</span></a>
+        <a href="mailto:7.jhuliniolopez@gmail.com" id="mailLink"><small>Email</small><span id="mailText">7.jhuliniolopez@gmail.com</span></a>
+        <a href="https://www.instagram.com/jlnovusstudio" target="_blank" rel="noopener"><small>Instagram</small><span>@jlnovusstudio</span></a>
+        <a href="https://www.facebook.com/search/top?q=JL%20Novus%20Studio" target="_blank" rel="noopener"><small>Facebook</small><span>JL Novus Studio</span></a>
+        <div><small>Ubicación</small><span>Cajamarca, Perú</span></div>
+        <div><small>Horario</small><span>Lunes a sábado, 9:00 a. m. – 7:00 p. m.</span></div>
+      </div>
+    </div>
+    <form class="rv" id="form">
+      <div><label for="f-name">Nombre</label><input id="f-name" required></div>
+      <div><label for="f-mail">Email</label><input id="f-mail" type="email" required></div>
+      <div><label for="f-phone">WhatsApp</label><input id="f-phone" type="tel"></div>
+      <div><label for="f-svc">Servicio</label><select id="f-svc"><option>Marketing Digital</option><option>Branding</option><option>Desarrollo Web</option><option>Paquete completo</option></select></div>
+      <div class="full"><label for="f-msg">Cuéntanos tu proyecto</label><textarea id="f-msg"></textarea></div>
+      <button class="btn full" type="submit">Enviar mensaje <span>→</span></button>
+      <p class="ok full" id="ok"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="#inicio"><img class="light" src="assets/logo-negro.png" alt="Novus Studio"><img class="dark" src="assets/logo-blanco.png" alt="Novus Studio"></a>
+        <p>Estudio creativo digital. Marketing digital, branding y desarrollo web para marcas que quieren destacar.</p>
+        <div class="social">
+          <a href="https://www.instagram.com/jlnovusstudio" target="_blank" rel="noopener" aria-label="Instagram @jlnovusstudio"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a>
+          <a href="https://www.facebook.com/search/top?q=JL%20Novus%20Studio" target="_blank" rel="noopener" aria-label="Facebook JL Novus Studio"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8a0 0 0 0 1 0 0z"/></svg></a>
+          <a href="https://wa.me/51938437193" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.3 2.2 2.3 4.2 4.5 4.5l1-1 2 1c-.3 1.2-1.3 2-2.5 1.8C11 15.4 8.6 13 8.2 10c-.2-1.2.6-2.2 1.8-2.5l1 2z"/></svg></a>
+        </div>
+      </div>
+      <div><h5>Navegación</h5><a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></div>
+      <div><h5>Servicios</h5><a href="#servicios">Marketing Digital</a><a href="#servicios">Branding</a><a href="#servicios">Desarrollo Web</a><a href="#servicios">Tiendas online</a></div>
+      <div><h5>Contacto</h5><a href="https://wa.me/51938437193" target="_blank" rel="noopener">Cotiza tu proyecto</a><a href="https://wa.me/51938437193" target="_blank" rel="noopener" id="waFoot">+51 938 437 193</a><a href="mailto:7.jhuliniolopez@gmail.com" id="mailFoot">7.jhuliniolopez@gmail.com</a><a href="https://www.instagram.com/jlnovusstudio" target="_blank" rel="noopener">@jlnovusstudio</a><a href="https://www.facebook.com/search/top?q=JL%20Novus%20Studio" target="_blank" rel="noopener">JL Novus Studio</a><span class="fnote">Cajamarca, Perú<br>Lun – Sáb · 9:00 a. m. – 7:00 p. m.</span></div>
+    </div>
+    <div class="legal"><span>© <span id="yr">2026</span> Novus Studio. Todos los derechos reservados.</span><span>Estudio creativo digital</span></div>
+  </div>
+</footer>
+
+<script>
+/* ====== CONFIGURA AQUÍ TUS DATOS ====== */
+const CONFIG = {
+  whatsapp: "51938437193",           // código de país + número, sin + ni espacios
+  email: "7.jhuliniolopez@gmail.com"
+};
+/* ===================================== */
+
+function waves(svg,w,h,n,y0,amp,spread,ph){
+  if(!svg) return; let d='';
+  for(let i=0;i<n;i++){
+    const k=i/(n-1); let p='';
+    for(let x=0;x<=w;x+=w/80){
+      const u=x/w, y=y0+amp*Math.sin(u*Math.PI*1.6+ph)+spread*(k-.5)*Math.sin(u*Math.PI*1.1+ph*.7);
+      p+=(x?'L':'M')+x.toFixed(1)+' '+y.toFixed(1);
+    }
+    d+='<path d="'+p+'"/>';
+  }
+  svg.innerHTML=d;
+}
+waves(document.getElementById('bgwaves'),1600,900,28,640,90,240,0.6);
+waves(document.getElementById('scrwaves'),400,250,22,175,22,70,1.2);
+waves(document.getElementById('bandwaves'),1200,420,26,300,50,200,0.4);
+document.querySelectorAll('.cover svg.lines').forEach((s,i)=>waves(s,400,250,18,190,20,90,i*1.3));
+
+// strip
+const words=['Marketing Digital','Branding','Desarrollo Web','Estrategia','Contenido','Identidad Visual','Tiendas Online'];
+let html=''; for(let r=0;r<2;r++) words.forEach(w=>html+='<span>'+w+'</span><span>/</span>');
+document.getElementById('track').innerHTML=html;
+
+// theme
+const root=document.documentElement;
+const q=new URLSearchParams(location.search).get('theme');
+try{ const s=q||localStorage.getItem('novus-theme'); if(s) root.dataset.theme=s; }catch(e){ if(q) root.dataset.theme=q; }
+document.getElementById('toggle').onclick=()=>{
+  root.dataset.theme = root.dataset.theme==='dark'?'light':'dark';
+  try{localStorage.setItem('novus-theme',root.dataset.theme)}catch(e){}
+};
+
+// sticky header + active link
+const header=document.getElementById('top');
+const links=[...document.querySelectorAll('.menu a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+function onScroll(){
+  header.classList.toggle('scrolled', scrollY>20);
+  const heroBottom=document.getElementById('inicio').getBoundingClientRect().bottom;
+  header.classList.toggle('dz', heroBottom>80);
+  let cur=0; secs.forEach((s,i)=>{ if(s && s.getBoundingClientRect().top<200) cur=i; });
+  links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+}
+addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+if(q) document.querySelectorAll('.rv').forEach(el=>el.classList.add('in')); // capturas
+
+// hero video: respect reduced motion
+const hv=document.getElementById('heroVideo');
+if(hv && matchMedia('(prefers-reduced-motion: reduce)').matches){ hv.removeAttribute('autoplay'); hv.pause(); }
+
+// contact data
+document.getElementById('yr').textContent=new Date().getFullYear();
+if(CONFIG.whatsapp){
+  const wa='https://wa.me/'+CONFIG.whatsapp;
+  ['waLink','waFoot'].forEach(id=>{const a=document.getElementById(id); a.href=wa; a.target='_blank'; a.rel='noopener';});
+}
+if(CONFIG.email){
+  ['mailLink','mailFoot'].forEach(id=>document.getElementById(id).href='mailto:'+CONFIG.email);
+  document.getElementById('mailText').textContent=CONFIG.email;
+}
+document.getElementById('form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const v=id=>document.getElementById(id).value.trim();
+  const msg=`Hola Novus Studio, soy ${v('f-name')}.\nServicio: ${v('f-svc')}\nEmail: ${v('f-mail')}\nWhatsApp: ${v('f-phone')}\n\n${v('f-msg')}`;
+  const ok=document.getElementById('ok'); ok.style.display='block';
+  if(CONFIG.whatsapp){ window.open('https://wa.me/'+CONFIG.whatsapp+'?text='+encodeURIComponent(msg),'_blank'); ok.textContent='Abriendo WhatsApp…'; }
+  else if(CONFIG.email){ location.href='mailto:'+CONFIG.email+'?subject='+encodeURIComponent('Nuevo proyecto - '+v('f-svc'))+'&body='+encodeURIComponent(msg); ok.textContent='Abriendo tu correo…'; }
+  else { ok.textContent='Formulario de prueba: falta configurar el WhatsApp o el email en el código.'; }
+});
+</script>
+</body>
+</html>
